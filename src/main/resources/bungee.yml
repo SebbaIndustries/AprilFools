@@ -1,0 +1,4 @@
+name: AprilFools
+main: me.sebbaindustries.aprilfools.Core
+version: ${project.version}
+author: username
