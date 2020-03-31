@@ -15,9 +15,9 @@ public class Chat implements Listener {
     public void chatListener(ChatEvent e){
         String input = e.getMessage();
         TranslateTextResponse output = Core.client.translateText(input, Language.RUSSIAN);
-        String[] test = output.getTranslatedText();
-        System.out.println(Arrays.toString(test));
-        e.setMessage(Arrays.toString(test));
+        String[] reply = output.getTranslatedText();
+
+        e.setMessage(Arrays.toString(reply));
     }
 
 }
