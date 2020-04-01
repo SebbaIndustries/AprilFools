@@ -19,15 +19,14 @@ public class Chat implements Listener {
         if (!Core.startMadness) return;
         String input = e.getMessage();
 
-        Translation translation = Core.api.translationApi().translate(input,
-                Direction.of(Language.SL, randomLanguage()));
+        Translation translation = Core.api.translationApi().translate(input, randomLanguage());
         String output = translation.text();
 
         e.setMessage(output);
     }
 
     private Language randomLanguage() {
-        int max = 6;
+        int max = 7;
         int min = 1;
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
@@ -38,7 +37,7 @@ public class Chat implements Listener {
         SR
         BG
         MK
-        RU
+        BS
          */
         switch (randomNum) {
             case 1:
@@ -53,6 +52,8 @@ public class Chat implements Listener {
                 return Language.BG;
             case 6:
                 return Language.MK;
+            case 7:
+                return Language.BS;
         }
         return Language.SL;
 
